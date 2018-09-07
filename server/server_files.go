@@ -62,7 +62,7 @@ func (s *Server) serveFiles(w http.ResponseWriter, r *http.Request) {
 				a.Close()
 				*/
  				zipit(file, file+".zip")
-				goto exiter
+				return
 			} else {
 				f, err := os.Open(file)
 				if err != nil {
@@ -82,8 +82,7 @@ func (s *Server) serveFiles(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	s.static.ServeHTTP(w, r)
-	exiter:
-	       return
+	 
 }
 
 func zipit(source, target string) error {
