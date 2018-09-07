@@ -21,9 +21,9 @@
     <div class="two column row">
       <div class="info column">
         <div class="name">
-          <span ng-show="!ready(t.Name+'.zip')">
+          <a ng-show="!ready(t.Name+'.zip')">
             {{ t.Name }}
-          </span>
+          </a>
           <a ng-show="ready(t.Name+'.zip')" ng-href="{{ ready(t.Name+'.zip').url }}">
             {{ t.Name }}
           </a>
